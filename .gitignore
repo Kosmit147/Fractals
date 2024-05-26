@@ -77,3 +77,10 @@ CMakeUserPresets.json
 
 # Build directory
 build
+
+# Clangd Language Server
+.clangd
+
+# clang-format
+.clang-format
+

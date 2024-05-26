@@ -12,14 +12,16 @@ class BuddhabrotFrac : public QDialog
     Q_OBJECT
 
 public:
-    explicit BuddhabrotFrac(QWidget *parent = nullptr);
-    QImage image;
+    explicit BuddhabrotFrac(QWidget* parent = nullptr);
     ~BuddhabrotFrac();
 
 private:
-    Ui::BuddhabrotFrac *ui;
-    void paintEvent(QPaintEvent *event) override;
-    void createBuddhabrotFractal();
+    void paintEvent(QPaintEvent* event) override;
+    void generateBuddhabrotFractal();
+
+private:
+    Ui::BuddhabrotFrac* ui;
+    QImage image;
 };
 
 #endif // BUDDHABROTFRAC_H

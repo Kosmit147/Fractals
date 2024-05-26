@@ -13,14 +13,16 @@ class NewtonFrac : public QDialog
     Q_OBJECT
 
 public:
-    explicit NewtonFrac(QWidget *parent = nullptr);
-    QImage image;
+    explicit NewtonFrac(QWidget* parent = nullptr);
     ~NewtonFrac();
 
 private:
-    Ui::NewtonFrac *ui;
-    void paintEvent(QPaintEvent *event) override;
-    void createNewtonFractal();
+    void paintEvent(QPaintEvent* event) override;
+    void generateNewtonFractal();
+
+private:
+    Ui::NewtonFrac* ui;
+    QImage image;
 };
 
 #endif // NEWTONFRAC_H
