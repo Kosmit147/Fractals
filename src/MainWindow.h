@@ -22,15 +22,14 @@ private slots:
     void on_pushNewtonBtn_clicked();
     void on_pushBuddhaBtn_clicked();
     void on_pushCompareBtn_clicked();
-    QImage getImage() const;
-    void generateNewtonFractal(QImage& image, int maxIterations);
-    void generateBuddhabrotFractal(QImage& image, int maxIterations);
-    void generateBuddhabrotFractalToCompare(QImage& image);
-    void generateNewtonFractalToCompare(QImage& image);
-
     void on_horizontalSlider_sliderMoved(int position);
-
     void on_iterationsSlider_valueChanged(int value);
+
+private:
+    void generateNewtonFractal(QImage& image, int width, int height, int xOffset, int yOffset,
+        int maxIterations);
+    void generateBuddhabrotFractal(QImage& image, int width, int height, int xOffset, int yOffset,
+        int maxIterations);
 
 private:
     Ui::MainWindow* ui;

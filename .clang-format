@@ -27,6 +27,6 @@ BreakBeforeBinaryOperators: NonAssignment
 AllowShortBlocksOnASingleLine: Empty
 AllowShortFunctionsOnASingleLine: Empty
 
-ColumnLimit: 120
+ColumnLimit: 100
 MaxEmptyLinesToKeep: 1
 InsertNewlineAtEOF: true
