@@ -1,8 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
 #include <QLabel>
+#include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -14,19 +14,19 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-  public:
+public:
     MainWindow(QWidget* parent = nullptr);
     ~MainWindow();
 
-  private slots:
+private slots:
     void on_pushNewtonBtn_clicked();
     void on_pushBuddhaBtn_clicked();
     void on_pushCompareBtn_clicked();
     QImage getImage() const;
-    void generateNewtonFractal(QImage &image, int maxIterations);
-    void generateBuddhabrotFractal(QImage &image, int maxIterations);
-    void generateBuddhabrotFractalToCompare(QImage &image);
-    void generateNewtonFractalToCompare(QImage &image);
+    void generateNewtonFractal(QImage& image, int maxIterations);
+    void generateBuddhabrotFractal(QImage& image, int maxIterations);
+    void generateBuddhabrotFractalToCompare(QImage& image);
+    void generateNewtonFractalToCompare(QImage& image);
 
     void on_horizontalSlider_sliderMoved(int position);
 
