@@ -101,7 +101,7 @@
              </font>
             </property>
             <property name="text">
-             <string>maxIterations:</string>
+             <string>Liczba iteracji:</string>
             </property>
            </widget>
           </item>
