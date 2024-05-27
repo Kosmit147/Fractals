@@ -21,10 +21,12 @@ class MainWindow : public QMainWindow
   private slots:
     void on_pushNewtonBtn_clicked();
     void on_pushBuddhaBtn_clicked();
-    void on_pushBothBtn_clicked();
+    void on_pushCompareBtn_clicked();
     QImage getImage() const;
     void generateNewtonFractal(QImage &image);
     void generateBuddhabrotFractal(QImage &image);
+    void generateBuddhabrotFractalToCompare(QImage &image);
+    void generateNewtonFractalToCompare(QImage &image);
 
   private:
     Ui::MainWindow* ui;
