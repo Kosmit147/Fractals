@@ -23,12 +23,16 @@ class MainWindow : public QMainWindow
     void on_pushBuddhaBtn_clicked();
     void on_pushCompareBtn_clicked();
     QImage getImage() const;
-    void generateNewtonFractal(QImage &image);
-    void generateBuddhabrotFractal(QImage &image);
+    void generateNewtonFractal(QImage &image, int maxIterations);
+    void generateBuddhabrotFractal(QImage &image, int maxIterations);
     void generateBuddhabrotFractalToCompare(QImage &image);
     void generateNewtonFractalToCompare(QImage &image);
 
-  private:
+    void on_horizontalSlider_sliderMoved(int position);
+
+    void on_iterationsSlider_valueChanged(int value);
+
+private:
     Ui::MainWindow* ui;
     QImage image;
 };

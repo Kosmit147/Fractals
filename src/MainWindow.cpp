@@ -10,6 +10,7 @@
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWindow), image(800, 600, QImage::Format_RGB32)
 {
     ui->setupUi(this);
+    ui->iterationsCountlabel->setText(QString::number(ui->iterationsSlider->value()));
 }
 
 MainWindow::~MainWindow()
@@ -19,14 +20,14 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushNewtonBtn_clicked()
 {
-       generateNewtonFractal(image);
+       generateNewtonFractal(image, ui->iterationsSlider->value());
        QImage fractalImage = getImage();
        ui->labelView->setPixmap(QPixmap::fromImage(fractalImage));
 }
 
 void MainWindow::on_pushBuddhaBtn_clicked()
 {
-    generateBuddhabrotFractal(image);
+    generateBuddhabrotFractal(image,ui->iterationsSlider->value());
     QImage fractalImage = getImage();
     ui->labelView->setPixmap(QPixmap::fromImage(fractalImage));
 }
@@ -44,7 +45,7 @@ QImage MainWindow::getImage() const
     return image;
 }
 
-void MainWindow::generateNewtonFractal(QImage &image)
+void MainWindow::generateNewtonFractal(QImage &image, int maxIterations)
 {
     int width = image.width();
     int height = image.height();
@@ -52,8 +53,6 @@ void MainWindow::generateNewtonFractal(QImage &image)
     double scale = 3.0;
     double offsetX = -1.5;
     double offsetY = -1.5;
-
-    int maxIterations = 50;
 
     for (int y = 0; y < height; ++y) {
         for (int x = 0; x < width; ++x) {
@@ -101,12 +100,11 @@ void MainWindow::generateNewtonFractal(QImage &image)
     }
 }
 
-void MainWindow::generateBuddhabrotFractal(QImage &image)
+void MainWindow::generateBuddhabrotFractal(QImage &image, int maxIterations)
 {
     int width = image.width();
     int height = image.height();
 
-    int maxIterations = 1000;
     int numSamples = 1000000;
 
     std::vector<int> histogram(width * height, 0);
@@ -269,4 +267,18 @@ void MainWindow::generateNewtonFractalToCompare(QImage &image)
             image.setPixel(x, y, color.rgb());
         }
     }
+}
+
+void MainWindow::on_horizontalSlider_sliderMoved(int position)
+{
+
+
+}
+
+void MainWindow::on_iterationsSlider_valueChanged(int value)
+{
+    ui->iterationsCountlabel->setText(QString::number(value));
+    //generateNewtonFractal(image, value);
+    //QImage fractalImage = getImage();
+    //ui->labelView->setPixmap(QPixmap::fromImage(fractalImage));
 }
