@@ -32,12 +32,6 @@ set(PROJECT_SOURCES
         src/MainWindow.cpp
         src/MainWindow.h
         src/MainWindow.ui
-        src/BuddhabrotFrac.cpp
-        src/BuddhabrotFrac.h
-        src/BuddhabrotFrac.ui
-        src/NewtonFrac.cpp
-        src/NewtonFrac.h
-        src/NewtonFrac.ui
 )
 
 if(ANDROID)

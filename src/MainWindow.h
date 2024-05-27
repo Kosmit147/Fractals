@@ -2,9 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
-#include "BuddhabrotFrac.h"
-#include "NewtonFrac.h"
+#include <QLabel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -24,10 +22,12 @@ class MainWindow : public QMainWindow
     void on_pushNewtonBtn_clicked();
     void on_pushBuddhaBtn_clicked();
     void on_pushBothBtn_clicked();
+    QImage getImage() const;
+    void generateNewtonFractal(QImage &image);
+    void generateBuddhabrotFractal(QImage &image);
 
   private:
     Ui::MainWindow* ui;
-    NewtonFrac* newtonDialog;
-    BuddhabrotFrac* buddhabrotDialog;
+    QImage image;
 };
 #endif // MAINWINDOW_H
