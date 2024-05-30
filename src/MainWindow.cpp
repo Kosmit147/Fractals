@@ -40,7 +40,7 @@ void MainWindow::on_pushCompareBtn_clicked()
     generateNewtonFractal(image, image.width(), image.height() / 2, 0, 0,
         ui->iterationsNewtonSlider->value(), selectedColorNewton);
     generateBuddhabrotFractal(image, image.width(), image.height() / 2, 0, image.height() / 2,
-        ui->iterationsNewtonSlider->value(), ui->buddhabrotSamplesSlider->value(), selectedColorBuddhabrot);
+        ui->buddhabrotIterationsSlider->value(), ui->buddhabrotSamplesSlider->value(), selectedColorBuddhabrot);
     ui->labelView->setPixmap(QPixmap::fromImage(image));
 }
 
@@ -154,14 +154,12 @@ void MainWindow::generateBuddhabrotFractal(QImage& image, int width, int height,
        }
 }
 
-
 void MainWindow::on_iterationsNewtonSlider_valueChanged(int value)
 {
     ui->iterationsCountlabel->setText(QString::number(value));
     // generateNewtonFractal(image, value);
     // ui->labelView->setPixmap(QPixmap::fromImage(image));
 }
-
 
 void MainWindow::on_buddhabrotIterationsSlider_valueChanged(int value)
 {
@@ -172,7 +170,6 @@ void MainWindow::on_buddhabrotSamplesSlider_valueChanged(int value)
 {
     ui->sampleCountLabel->setText(QString::number(value));
 }
-
 
 void MainWindow::on_colorPickerBuddhabrot_clicked()
 {
@@ -191,3 +188,4 @@ void MainWindow::on_colorPickerNewton_clicked()
             selectedColorNewton = color;
         }
 }
+

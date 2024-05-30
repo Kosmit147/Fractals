@@ -28,7 +28,6 @@ private slots:
     void on_iterationsNewtonSlider_valueChanged(int value);
     void on_buddhabrotIterationsSlider_valueChanged(int value);
     void on_buddhabrotSamplesSlider_valueChanged(int value);
-
     void on_colorPickerNewton_clicked();
 
 private:
