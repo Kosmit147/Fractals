@@ -24,11 +24,8 @@ private slots:
     void on_pushCompareBtn_clicked();
 
     void on_iterationsNewtonSlider_valueChanged(int value);
-
     void on_buddhabrotIterationsSlider_valueChanged(int value);
-
     void on_buddhabrotSamplesSlider_valueChanged(int value);
-
 
 private:
     void generateNewtonFractal(QImage& image, int width, int height, int xOffset, int yOffset,
