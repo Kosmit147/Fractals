@@ -6,23 +6,35 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1100</width>
-    <height>700</height>
+    <width>1102</width>
+    <height>661</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Generator Fraktali</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout_7">
+   <layout class="QHBoxLayout" name="horizontalLayout_6">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_6">
-      <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QWidget" name="">
        <layout class="QVBoxLayout" name="verticalLayout_2">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetFixedSize</enum>
+        </property>
         <item>
          <layout class="QVBoxLayout" name="verticalLayout">
           <item>
            <widget class="QPushButton" name="pushNewtonBtn">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -43,6 +55,12 @@
           </item>
           <item>
            <widget class="QPushButton" name="pushBuddhaBtn">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -63,6 +81,12 @@
           </item>
           <item>
            <widget class="QPushButton" name="pushCompareBtn">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -154,6 +178,20 @@
           </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="colorPickerNewton">
+          <property name="font">
+           <font>
+            <pointsize>16</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Wybierz kolor</string>
           </property>
          </widget>
         </item>
@@ -274,6 +312,20 @@
          </widget>
         </item>
         <item>
+         <widget class="QPushButton" name="colorPickerBuddhabrot">
+          <property name="font">
+           <font>
+            <pointsize>16</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Wybierz kolor</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <spacer name="verticalSpacer">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
@@ -287,21 +339,25 @@
          </spacer>
         </item>
        </layout>
-      </item>
-      <item>
-       <widget class="QLabel" name="labelView">
-        <property name="minimumSize">
-         <size>
-          <width>800</width>
-          <height>600</height>
-         </size>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-     </layout>
+      </widget>
+      <widget class="QLabel" name="labelView">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>800</width>
+         <height>600</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -310,7 +366,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1100</width>
+     <width>1102</width>
      <height>21</height>
     </rect>
    </property>
