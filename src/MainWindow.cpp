@@ -11,7 +11,9 @@ MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent), ui(new Ui::MainWindow), image(800, 600, QImage::Format_RGB32)
 {
     ui->setupUi(this);
-    ui->iterationsCountlabel->setText(QString::number(ui->iterationsSlider->value()));
+    ui->iterationsCountlabel->setText(QString::number(ui->iterationsNewtonSlider->value()));
+    ui->iterationsBuddhabrot->setText(QString::number(ui->buddhabrotIterationsSlider->value()));
+    ui->sampleCountLabel->setText(QString::number(ui->buddhabrotSamplesSlider->value()));
 }
 
 MainWindow::~MainWindow()
@@ -22,23 +24,23 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushNewtonBtn_clicked()
 {
     generateNewtonFractal(image, image.width(), image.height(), 0, 0,
-        ui->iterationsSlider->value());
+        ui->iterationsNewtonSlider->value());
     ui->labelView->setPixmap(QPixmap::fromImage(image));
 }
 
 void MainWindow::on_pushBuddhaBtn_clicked()
 {
     generateBuddhabrotFractal(image, image.width(), image.height(), 0, 0,
-        ui->iterationsSlider->value());
+        ui->buddhabrotIterationsSlider->value(), ui->buddhabrotSamplesSlider->value());
     ui->labelView->setPixmap(QPixmap::fromImage(image));
 }
 
 void MainWindow::on_pushCompareBtn_clicked()
 {
     generateNewtonFractal(image, image.width(), image.height() / 2, 0, 0,
-        ui->iterationsSlider->value());
+        ui->iterationsNewtonSlider->value());
     generateBuddhabrotFractal(image, image.width(), image.height() / 2, 0, image.height() / 2,
-        ui->iterationsSlider->value());
+        ui->iterationsNewtonSlider->value(), ui->buddhabrotSamplesSlider->value());
     ui->labelView->setPixmap(QPixmap::fromImage(image));
 }
 
@@ -95,9 +97,8 @@ void MainWindow::generateNewtonFractal(QImage& image, int width, int height, int
 }
 
 void MainWindow::generateBuddhabrotFractal(QImage& image, int width, int height, int xOffset,
-    int yOffset, int maxIterations)
+    int yOffset, int maxIterations, int numSamples)
 {
-    int numSamples = 1000000;
 
     std::vector<int> histogram(width * height, 0);
 
@@ -149,11 +150,22 @@ void MainWindow::generateBuddhabrotFractal(QImage& image, int width, int height,
     }
 }
 
-void MainWindow::on_horizontalSlider_sliderMoved(int position) {}
 
-void MainWindow::on_iterationsSlider_valueChanged(int value)
+void MainWindow::on_iterationsNewtonSlider_valueChanged(int value)
 {
     ui->iterationsCountlabel->setText(QString::number(value));
     // generateNewtonFractal(image, value);
     // ui->labelView->setPixmap(QPixmap::fromImage(image));
 }
+
+
+void MainWindow::on_buddhabrotIterationsSlider_valueChanged(int value)
+{
+    ui->iterationsBuddhabrot->setText(QString::number(value));
+}
+
+void MainWindow::on_buddhabrotSamplesSlider_valueChanged(int value)
+{
+    ui->sampleCountLabel->setText(QString::number(value));
+}
+
