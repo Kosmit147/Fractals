@@ -160,8 +160,6 @@ void MainWindow::generateBuddhabrotFractal(QImage& image, int width, int height,
 void MainWindow::on_iterationsNewtonSlider_valueChanged(int value)
 {
     ui->iterationsCountlabel->setText(QString::number(value));
-    // generateNewtonFractal(image, value);
-    // ui->labelView->setPixmap(QPixmap::fromImage(image));
 }
 
 void MainWindow::on_buddhabrotIterationsSlider_valueChanged(int value)
