@@ -80,3 +80,6 @@ build
 
 # Clangd Language Server
 .clangd
+
+# Documentation
+docs
